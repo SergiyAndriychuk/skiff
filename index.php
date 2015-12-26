@@ -7,5 +7,5 @@ spl_autoload_register(function($className){
     }
 });
 
-$user = new User();
-echo $user->getLogin();
+$user = new ReflectionClass('User');
+Reflection::export($user);
