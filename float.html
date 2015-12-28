@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <style>
+        body {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .main-content {
+            width: 500px;
+            height: 2000px;
+            background: aquamarine;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        .float-block {
+            width: 200px;
+            height: 150px;
+            background: brown;
+            float: right;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+
+    </div>
+    <div class="float-block">
+
+    </div>
+<script type="text/javascript">
+    var floatBlock = $('.float-block');
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            if (scroll > 150) {
+                floatBlock.animate({
+                    'margin-top': scroll + 50
+                })
+            }
+        })
+    });
+</script>
+</body>
+</html>

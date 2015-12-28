@@ -18,9 +18,11 @@ function strCompare($strFirst, $strSecond, $compare = true)
             } else {
                 $strSecond = preg_replace('#' . $strSecond[$char] . '#', $replaceChar, $strSecond, $replaceLimit);
             }
-        } else {
-            $char++;
+
+           continue;
         }
+
+        $char++;
     }
 
     return $strDifference;
@@ -38,7 +40,7 @@ function replaceDiff($strFirst, $strSecond, $diff, $compare)
     return str_replace($diff, '', $strSecond);
 }
 
-$str1 = '12%%45';
+$str1 = '12!!!45';
 $str2 = '12345';
 
 $compare = strlen($str1) > strlen($str2) ? true : false;
